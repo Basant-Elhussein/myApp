@@ -17,7 +17,8 @@ app.use(expressLayouts);
 app.use(express.static('public'));
 
 /*Setting Mongodb */
-mongoose.connect(process.env.database_url, { useNewUrlParser: true });
+//const url = process.env.DATABASE_URL || 'mongodb://localhost/my_app';
+mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true });
 const db = mongoose.connection;
 db.on('error', (error) => {
   console.log(error);
